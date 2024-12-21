@@ -1,0 +1,214 @@
+
+
+
+
+
+
+/*categorie*/
+
+.btn2{
+	border: none;
+	padding: 10px;
+	transition: 0.2s ease;
+	border-radius: 4px;
+	
+	width: 150px;
+	
+}
+
+.btn2:hover{
+
+	background-color: rgb(65, 130, 216) !important;
+
+	box-shadow: -0px -0px 50px rgb(65, 130, 216);
+	
+
+}
+
+
+
+.sh .dropdown-menu{
+	background-color: rgb(98, 154, 228) !important;
+	transition: 0.2s ease;
+	color: white;
+	box-shadow: -0px -0px 50px rgb(65, 130, 216);
+	border-radius: 4px;
+	
+	
+
+}
+
+.sh .dropdown-item{
+	color: beige;
+	transition: 0.2s linear;
+}
+
+.sh .dropdown-item:hover{
+	color: beige;
+	background-color: rgb(73, 72, 72);
+}
+
+
+
+
+/*portofolio*/
+
+.portofolio-itm{
+	margin-bottom: 35px;
+	padding: 15px;
+	position: relative;
+	height: 350px;
+ }
+
+
+
+ 
+ 
+ .portofolio-itm img{
+	 width: 100%;
+	 height: 100%;
+	 
+ }
+ .portofolio-itm .layer{
+	 position: absolute;
+	 top: 0;left: 0;width: 100%;height: 100%;
+	 background: rgba(0,0,0,0.45);
+	 opacity: 0;visibility: hidden;/*hadi bach matbanch*/
+	 transition:opacity .6s;
+ }
+ .layer-cntr{
+	 position: absolute;
+	 width: 80%;
+	 top: 50%;left: 50%;
+	 transform: translate(-50%,-50%);
+	 text-align: center;
+ 
+ }
+
+
+
+
+ 
+ .portofolio-itm::before{
+	content: '';
+	position: absolute;
+	inset: -3px;
+	z-index: -1;
+ }
+
+
+ .portofolio-itm::after{
+	content: '';
+	position: absolute;
+	inset: -1px;
+	z-index: -1;
+	filter: blur(20px);
+ }
+
+
+
+
+
+ .portofolio-itm:hover .layer{
+	 opacity: 1;visibility: visible;
+ }
+
+ .portofolio-itm:hover::before,.portofolio-itm:hover::after{
+	/*box-shadow: 0 0 0 8px rgb(17, 16, 16);*/
+	background: linear-gradient(45deg,#00ccff,#0e1538,#0e1538,
+	#d400d4);
+ }
+
+
+ .ctgr{
+	 color:rgb(65, 130, 216) ;
+	 display: block;/*bach ymchi l margin*/
+	 margin-bottom: 8px;
+	 font-size: 18px;
+	 text-transform: rgb(65, 130, 216);
+	 font-weight: 700;
+	 position: relative;
+	 top: 12px;
+	 transition: top .5s;
+	 transition-delay: 0s;
+	 opacity: 0;visibility: hidden;
+ }
+
+
+ .point{
+	color:rgb(65, 130, 216) ;
+	display: block;/*bach ymchi l margin*/
+	margin-bottom: 8px;
+	font-size: 15px;
+	text-transform: rgb(65, 130, 216);
+	font-weight: 700;
+	position: relative;
+	top: 12px;
+	transition: top .5s;
+	transition-delay: .2s;
+	opacity: 0;visibility: hidden;
+}
+ .layer-title{
+	 font-size: 25px;color: white;margin-bottom: 10px;
+	 position: relative;
+	 top: 12px;
+	 transition: top .5s;
+	 transition-delay: .4s;/*hna kitathareq ctgry 0.2s bach tatharek title*/
+	 opacity: 0;visibility: hidden;
+ }
+ 
+ 
+
+
+
+ 
+.swiper {
+  width: 700px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  backdrop-filter: blur(14px);
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgb(31 41 55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s linear;
+}
+
+.swiper-slide:hover{
+  transform: scale(1.05) rotate(2deg);
+}
+
+
+
+.swiper-button-prev,
+.swiper-button-next{
+  color: rgb(255, 111, 123);
+}
+
+:root {
+  --swiper-theme-color: rgb(255, 111, 123);
+}
+
+
+
+
+
+/*pagination*/
+
+
+
+
+.pgn{
+	background-color: #337ab7;border-color: #337ab7;
+}

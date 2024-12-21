@@ -1,0 +1,1159 @@
+card 
+
+
+
+
+
+
+
+  <div class="row">
+
+        <!--jai fait lg md sm pour respecter respence-->
+
+        <?php 
+
+        if($res->num_rows>0){
+                while($ligne=mysqli_fetch_array($res)) 
+
+                {
+                  echo '
+
+        <div class="col-lg-4 col-md-6 col-sm-12 p-1">
+
+
+            <div class="card h-100" >
+            <img class="card-img-top h-50" src="'.$ligne[0].'" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">'.$ligne[2].'</h3>
+              <p class="card-text">type : '.$ligne[4].'</p>
+              <p class="card-text">date :'.$ligne[3].' </p>
+              <p class="card-text">min point :'.$ligne[6].' </p>
+                  <a href="demlivre.php?idl='.$ligne[0].'&idu='.$ligne[1].'&pt='.$ligne[6].'&nbex='.$ligne[5].'" class="btn btn-primary mb-0">demmander</a>
+                  <a href="conslivre.php?idl='.$ligne[0].'&idu='.$ligne[1].'&pt='.$ligne[6].'&nbex='.$ligne[5].'&ttr='.$ligne[2].'" class="btn btn-warning mb-0">consulter</a>
+                </div>
+              </div>
+
+        </div> ';
+       }
+
+        }
+
+
+
+                ?>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+admin card 
+
+
+
+
+
+
+
+              <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
+                       <div class="card">
+                              <div class="card-header p-3 pt-2">
+
+                                  <i class="material-icons opacity-10">weekend</i>
+
+                                  <div class="row">
+                                      <div class="col-5">
+                                        <p class="text-sm mb-0 text-capitalize">أموال اليوم</p>
+                                      </div>
+                                      <div class="col-5">
+                                        <h4 class="mb-0">$53k</h4>
+                                      </div>
+      
+                                  </div>
+
+                              </div>
+
+                               <hr class="dark horizontal my-0">
+
+                              <div class="card-footer p-3">
+                                <p class="mb-0 text-start"><span class="text-success text-sm font-weight-bolder ms-1">+56% </span>من الأسبوع الماضي</p>
+                              </div>
+  
+                        </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+quizy
+
+
+
+https://quizy-dz.com/login
+
+
+
+
+offre quizy
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>project java script</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="practice on javascript part2">
+  <!--t9der tktb hna javascript t3k dir haka w tbda tkteb   <script>         </script> -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="footer.css?v=<?php echo time();?>">
+  <link rel="stylesheet" href="css/font-awesome.min.css"><!--file icone-->
+</head>
+
+<body>
+
+
+<?php
+include "connexion.php";
+
+
+
+    session_start();
+    
+
+    $iduser = $_SESSION["user"][0];
+    $scor = $_SESSION["user"][7];
+
+
+    $reqt = "select * from offrequizy";
+
+
+
+
+/*$reqt = "select max(id) from projet";*/
+$res = mysqli_query($con,$reqt);
+if(!$res){
+  echo"error";
+ }
+
+
+
+
+?>
+
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-primary" href="#">Anis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="acc.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ajoutlivre2.php">ajouter livre</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="offreqz.php">quizy</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="livrebibliotheque.php">bibliotheque</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="notification.php">notification</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                profil
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="acces.php">consulter</a>
+                <a class="dropdown-item" href="mdprfll.php">modifier</a>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+
+
+
+    <div class="row m-5">
+      <div class="col-lg-4 col-sm-12 m-2">
+      <h1 class="text-primary mb-3">QUIZY</h1>
+      <hr>
+      <hr>
+      <p class="text-secondary">*********************************************<br>*******************************<br>
+      *****************
+    </p>
+      <a href="https://quizy-dz.com/login" class="btn btn-outline-primary" role="button" aria-pressed="true">visiter site</a>
+      
+
+      </div>
+
+
+
+      <div class="col-lg-7 col-sm-12">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner qz" style="height: 500px;">
+            <div class="carousel-item active" style="height:100%;">
+              <img class="d-block w-100" src="imgqz/1.png" alt="First slide" style="height:100%;width:100%">
+            </div>
+            <div class="carousel-item" style="height:100%;">
+              <img class="d-block w-100" src="imgqz/2.png" alt="First slide" style="height:100%;width:100%">
+            </div>
+            <div class="carousel-item" style="height:100%;">
+              <img class="d-block w-100" src="imgqz/3.png" alt="First slide" style="height:100%;width:100%">
+            </div>
+            <div class="carousel-item" style="height:100%;">
+              <img class="d-block w-100" src="imgqz/4.png" alt="First slide" style="height:100%;width:100%">
+            </div>
+            <div class="carousel-item" style="height:100%;">
+              <img class="d-block w-100" src="imgqz/5.png" alt="First slide" style="height:100%;width:100%">
+            </div>
+            <div class="carousel-item" style="height:100%;">
+              <img class="d-block w-100" src="imgqz/6.png" alt="First slide" style="height:100%;width:100%">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        
+        
+      </div>
+      
+
+
+
+
+    </div>
+
+
+<!--card-->
+<div class="container">
+<!--jai fait ca pour separer les deux container -->
+    <div class="text-center m-5">
+    <h1> <span data-text="OffresQuizy" class="grtitre">OffresQuizy</span> </h1>
+        <p>you find all our prjects her</p>
+    </div>
+
+
+  <div class="row">
+
+        <!--jai fait lg md sm pour respecter respence-->
+
+        <?php 
+
+        if($res->num_rows>0){
+          while($ligne=mysqli_fetch_array($res)) 
+
+          {
+              if($scor>$ligne[4]){$color = 'btn-primary';}else{$color = 'btn-danger';}
+            echo '
+
+  <div class="col-lg-4 col-md-6 col-sm-12 p-1">
+
+
+      <div class="card h-100" >
+          <img class="card-img-top h-50" src="'.$ligne[0].'" alt="Card image cap">
+          <div class="card-body">
+            <h3 class="card-title">'.$ligne[0].'</h3>
+            <p class="card-text">dure: '.$ligne[2].'</p>
+            <p class="card-text">reduction : '.$ligne[3].'</p>
+            <p class="card-text">min point : '.$ligne[4].'</p>
+            <p class="card-text">description : '.$ligne[5].'</p>
+            <a href="#" class="btn '.$color.' mb-0">get</a>
+
+          </div>
+        </div>
+
+  </div> ';
+  
+ }
+
+        }
+
+
+
+                ?>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<section class="wavsection mt-5">
+
+
+    <img src="ressources/canadian-maple-leaf-brands.svg" class="logo1">
+
+    
+    <ul class="footer-liste">
+      <li><a href="https://www.facebook.com/Micro.Club.USTHB/" target="_blank"><i class="fa fa-facebook fa-1x"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UCoC4e-jxPVtk1S2vtByFXWg" target="_blank"><i class="fa fa-youtube fa-1x"></i></a></li>
+      <li><a href="https://twitter.com/MicroClub2015" target="_blank"><i class="fa fa-twitter fa-1x"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/micro-club-usthb/" target="_blank"><i class="fa fa-linkedin fa-1x"></i></a></li>
+      <li><a href="https://microclub.net/" target="_blank"><i class="fa fa-google-plus fa-1x"></i></a></li>
+      <li><a href="https://www.instagram.com/microclub_usthb/" target="_blank"><i class="fa fa-instagram fa-1x"></i></a></li>
+  
+    </ul>
+    <p class="footer-text">copyright &copy;2022 all right recervid right yahia anis </p>
+
+    
+  
+
+
+    <div class="wave wave1">
+
+    </div>
+
+    <div class="wave wave2">
+
+    </div>
+
+    <div class="wave wave3">
+
+    </div>
+
+    <div class="wave wave4">
+
+    </div>
+
+</section>
+
+
+
+<script src="js/popper.min.js"></script>
+   <script src="js/jquery-3.6.3.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+profil acces.php
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>project java script</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="practice on javascript part2">
+  <!--t9der tktb hna javascript t3k dir haka w tbda tkteb   <script>         </script> -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/font-awesome.min.css"><!--file icone-->
+  <link rel="stylesheet" href="footer.css?v=<?php echo time();?>">
+</head>
+
+<body>
+
+
+<?php
+include "connexion.php";
+
+
+    session_start();
+    
+
+    $iduser = $_SESSION["user"][0];
+
+    $reqt = "select * from livre2 where iduser='$iduser'";
+    $reqt2 = "select * from user where id='$iduser'";
+
+    $reqt33 = "select * from demlivre where idlctlivre = '$iduser'";
+
+
+
+
+    /*$reqt = "select max(id) from projet";*/
+    $res33 = mysqli_query($con,$reqt33);
+    if(!$res33){
+      echo"error";
+     }
+
+
+
+
+/*$reqt = "select max(id) from projet";*/
+$res1 = mysqli_query($con,$reqt);
+if(!$res1){
+  echo"error";
+ }
+
+ $res2 = mysqli_query($con,$reqt2);
+ if(!$res2){
+   echo"error";
+  }else{
+    $ln = mysqli_fetch_array($res2);
+  }
+ 
+
+?>
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-primary" href="#">Anis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="acc.php">accueil<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ajoutlivre2.php">ajouter livre</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="offreqz.php">quizy</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="livrebibliotheque.php">bibliotheque</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="acces.php">profil</a>
+            </li>
+
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                 <i class="fa fa-bell" aria-hidden="true"></i>
+
+              </a>
+              <div class="dropdown-menu p-2 notify" aria-labelledby="navbarDropdown">
+
+
+
+
+
+              
+
+              <?php 
+
+                              if($res33->num_rows>0){
+
+
+                                while($ligne33=mysqli_fetch_array($res33)){
+
+                                     $reqt22 = "select * from user  where id = '$ligne33[0]'";
+                                     $reqt44 = "select titre from livre2  where iduser = '$iduser' and idlivree='$ligne33[1]'";
+
+                                     $res22 = mysqli_query($con,$reqt22);
+                                     $res44 = mysqli_query($con,$reqt44);
+                                     if(!$res22 || !$res44){
+                                       echo"error";
+                                      }else{
+                                         $ligne22=mysqli_fetch_array($res22);
+                                         $ligne44=mysqli_fetch_array($res44);
+                                         echo ' 
+                                                  <div class="notifi-item">
+                                                     <img src="'.$ligne22[9].'" alt="img">
+                                                     <div class="text">
+                                                       <h3>'.$ligne22[0].'</h4>
+                                                       <h4>a emprente votre livre '.$ligne44[0].' referance '.$ligne33[1].'</h4>
+                                                       <p>date : '.$ligne33[2].'</p>
+                                                     </div> 
+                                                   </div>
+                                         ';
+
+                                      }
+
+                                 }
+
+                              }
+
+
+
+      
+
+                        ?>
+
+
+
+
+
+              </div>
+            </li>
+
+
+
+
+          </ul>
+
+        </div>
+      </nav>
+
+
+
+
+
+<!--card-->
+<div class="container">
+<!--jai fait ca pour separer les deux container -->
+    <div class="text-center m-3">
+    <h1> <span data-text="PROFIL" class="grtitre">PROFIL</span> </h1>
+        <p>Mon compte</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="row m-2">
+          <div class="col-lg-3 col-sm-12">
+
+              <div class="sidebar bg-dark">
+             <div class="card__image sd">
+               <img src="<?php echo $ln[9];?>" alt="card image">
+             </div>
+
+             <div class="card__content sd">
+               <h4 class="card__title sd text-primary"><?php echo $ln[3];?></h4>
+               <h5 class="card__name sd text-light"><?php echo $ln[1];?> <?php echo $ln[2];?></h5>
+               <p class="card__text sd text-light"><?php echo $ln[8];?></p>
+               <p class="card__text sd text-light"><?php echo $ln[6];?></p>
+               <p class="card__text sd text-light"><?php echo $ln[7];?></p>
+               
+               
+               <div class="dropdown sh">
+                      <button class="btn btn2 btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        profil
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                          <a class="dropdown-item active" href="#">profil</a>
+                          <a class="dropdown-item" href="mdprfll.php">modifier</a>
+                          <a class="dropdown-item" href="anis.php">deconnecter</a>
+  
+                      </div>
+               </div>
+
+
+             </div>
+
+              </div>
+        
+          </div>
+    
+
+        <!--jai fait lg md sm pour respecter respence-->
+          <div class="col-lg-8 col-sm-12">
+          <div class="row">
+                 <?php 
+
+                 if($res1->num_rows>0){
+                while($ligne=mysqli_fetch_array($res1)) 
+
+                {
+                  echo '
+
+                 <div class="col-lg-4 col-md-6 col-sm-12 p-1">
+
+
+                     <div class="card h-100" >
+                     <img class="card-img-top h-50" src="'.$ligne[0].'" alt="Card image cap">
+                     <div class="card-body">
+              <h3 class="card-title">'.$ligne[2].'</h3>
+              <p class="card-text">type : '.$ligne[4].'</p>
+              <p class="card-text">date :'.$ligne[3].' </p>
+              <p class="card-text">nombre dexemplaire :'.$ligne[5].' </p>
+              <p class="card-text">nombre de point :'.$ligne[6].' </p>
+                  <a href="supp.php?idl='.$ligne[0].'&idu='.$ligne[1].'" class="btn btn-primary mb-0">supprimer</a>
+                  <a href="modifierlivre.php?idl='.$ligne[0].'&idu='.$ligne[1].'" class="btn btn-primary mb-0">modifier</a>
+                </div>
+              </div>
+
+                 </div> ';
+                }
+
+
+                 }
+
+
+
+                         ?>
+            </div>             
+           </div>
+  
+</div>
+
+
+
+
+<div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide portofolio-itm">
+              
+                <img src="book1.jpg" alt="">
+                <div class="layer">
+                  <div class="layer-cntr">
+                                     <h1>A</h1>
+                <p>ojfih</p>
+
+                <h2>A</h2>
+                <p>ojfih</p>
+
+                <h3>A</h3>
+                <p>ojfih</p>
+
+                <button>jhiuhu</button>
+                  </div>
+
+ 
+                </div>
+          </div>
+          <div class="swiper-slide portofolio-itm">
+              
+            <img src="book1.jpg" alt="">
+            <div class="layer">
+              <div class="layer-cntr">
+                                 <h1>A</h1>
+            <p>ojfih</p>
+
+            <h2>A</h2>
+            <p>ojfih</p>
+
+            <h3>A</h3>
+            <p>ojfih</p>
+
+            <button>jhiuhu</button>
+              </div>
+
+
+            </div>
+      </div>
+      <div class="swiper-slide portofolio-itm">
+              
+        <img src="book1.jpg" alt="">
+        <div class="layer">
+          <div class="layer-cntr">
+                             <h1>A</h1>
+        <p>ojfih</p>
+
+        <h2>A</h2>
+        <p>ojfih</p>
+
+        <h3>A</h3>
+        <p>ojfih</p>
+
+        <button>jhiuhu</button>
+          </div>
+
+
+        </div>
+  </div>
+              <div class="swiper-slide portofolio-itm">
+              
+                <img src="book1.jpg" alt="">
+                <div class="layer">
+                  <div class="layer-cntr">
+                                     <h1>A</h1>
+                <p>ojfih</p>
+
+                <h2>A</h2>
+                <p>ojfih</p>
+
+                <h3>A</h3>
+                <p>ojfih</p>
+
+                <button>jhiuhu</button>
+                  </div>
+
+ 
+                </div>
+          </div>
+ 
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+
+
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <script src="acces.js"></script>
+
+<script src="js/popper.min.js"></script>
+   <script src="js/jquery-3.6.3.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pagination
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Pagination using PHP, MySQLi and Bootstrap</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<?php 
+ include"dbcon.php"; 
+ $limit = isset($_POST["limit-records"]) ? $_POST["limit-records"] : 10;
+ $page = isset($_GET['page']) ? $_GET['page'] : 1;
+ $start = ($page - 1) * $limit;
+ $result = $conn->query("SELECT * FROM customers LIMIT $start, $limit");
+ $customers = $result->fetch_all(MYSQLI_ASSOC);
+  
+ $result1 = $conn->query("SELECT count(id) AS id FROM customers");
+ $custCount = $result1->fetch_all(MYSQLI_ASSOC);
+ $total = $custCount[0]['id']; 
+ $pages = ceil( $total / $limit ); 
+  
+ $Previous = $page - 1;
+ $Next = $page + 1;
+?> 
+<div class="container well" style="margin-top:20px;">
+ <h1 class="text-center">Pagination using PHP MySQLi and Bootstrap</h1>
+ <div class="row">
+   <div class="col-md-10">
+    <nav aria-label="Page navigation">
+     <ul class="pagination">
+        <li>
+          <a href="bootstrap-pagination-php-mysql.php?page=<?= $Previous; ?>" aria-label="Previous">
+            <span aria-hidden="true">« Previous</span>
+          </a>
+        </li>
+        <?php for($i = 1; $i<= $pages; $i++) : 
+       if ($i==$page) {$active = "class='active'"; 
+       }else {$active = ""; } 
+     ?>
+         <li <?php echo $active; ?>><a href="bootstrap-pagination-php-mysql.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+        <?php endfor; ?> 
+         
+        <li>
+          <a href="bootstrap-pagination-php-mysql.php?page=<?= $Next; ?>" aria-label="Next">
+            <span aria-hidden="true">Next »</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+   </div> 
+   <div class="text-center" style="margin-top: 20px; " class="col-md-2">
+    <form method="post" action="#">Show
+      <select name="limit-records" id="limit-records">
+       <option value="10" selected="selected">10</option>
+       <?php foreach([10,100,500,1000,5000] as $limit): ?>
+        <option <?php if( isset($_POST["limit-records"]) && $_POST["limit-records"] == $limit) echo "selected" ?> value="<?= $limit; ?>"><?= $limit; ?></option>
+       <?php endforeach; ?>
+      </select>
+      entries
+     </form>
+   </div>
+ </div>
+ <div style="overflow-y: auto;">
+   <table id="" class="table table-striped table-bordered">
+          <thead>
+                 <tr>
+                     <th>Id</th>
+                     <th>Name</th>
+                     <th>Mobile</th>
+                     <th>Address</th>
+                     <th>Date</th>
+                </tr>
+            </thead>
+          <tbody>
+           <?php foreach($customers as $customer) :  ?>
+            <tr>
+             <td><?= $customer['id']; ?></td>
+             <td><?= $customer['name']; ?></td>
+             <td><?= $customer['mobile']; ?></td>
+             <td><?= $customer['address']; ?></td>
+             <td><?= $customer['createdOn']; ?></td>
+            </tr>
+           <?php endforeach; ?>
+          </tbody>
+        </table>
+  </div>
+</div>
+<script type="text/javascript">
+ $(document).ready(function(){
+  $("#limit-records").change(function(){
+   $('form').submit();
+  })
+ })
+</script>
+<style>
+.active {background-color: #337ab7;border-color: #337ab7;}
+</style>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+index.php
+
+
+
+    <div class="container">
+        <div class="text-center m-5">
+            <h1>user</h1>
+            <p>user existe</p>
+        </div>
+    </div>
+
+<div class="row m-5">
+
+        
+  <section class="swiper mySwiper">
+
+    <div class="swiper-wrapper">
+
+    <?php
+    $i=0;
+    if($res->num_rows>0){
+
+
+
+          while($ligneres=mysqli_fetch_array($res)){
+            if($i<3){
+                    echo '      <div class="card swiper-slide">
+        <div class="card__image">
+          <img src="'.$ligneres[9].'" alt="card image">
+        </div>
+
+        <div class="card__content">
+          <span class="card__title">'.$ligneres[6].'</span>
+          <span class="card__name">'.$ligneres[1].' '.$ligneres[2].'</span>
+          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+          <button class="card__btn">View More</button>
+        </div>
+      </div>';
+      $i++;
+            }
+
+
+
+    }
+    }
+
+
+
+
+      ?>
+
+
+    </div>
+  </section>
+     
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+demlivre.php
+
+
+
+ if(!empty($_GET["idl"] && $_GET["idu"] && $_GET["pt"] && $_GET["nbex"])){
+
+
+      $idl = decrypt($_GET["idl"],$key);
+      $idu = decrypt($_GET["idu"],$key);
+      $pt = decrypt($_GET["pt"],$key);
+      $nbex = decrypt($_GET["nbex"],$key);
+
+
+        $reqt = "select score from user where id = '$iduser'";
+        $res = mysqli_query($con,$reqt);
+        if(!$res){
+            echo"error rqt1";
+         }
+         else{
+            $ligne=mysqli_fetch_array($res);
+            if($ligne[0]>$pt){
+                $reqt2 = "INSERT INTO demlivre (idlecteur,idlivr,datedem,idlctlivre) VALUES ('$iduser','$idl','2023-09-08','$idu')";
+
+                if(mysqli_query($con, $reqt2)){
+
+                    $d = $ligne[0]-$pt;
+                    $reqt3 = "UPDATE user set score='$d' where id=$iduser";
+                    $res3 = mysqli_query($con,$reqt3);
+                    if(!$res3){
+                      echo"error rqt3";
+                    }else{
+
+                      if($nbex>1){
+                                  $nbxrr = $nbex-1;
+                                  $reqt4 = "UPDATE livre2 set nbrexemplaire='$nbxrr' where idlivree=$idl and iduser=$idu";
+                      }else{
+                        $reqt4 = "delete from livre2 where idlivree ='$idl' and iduser ='$idu'";
+
+                      }
+                   
+
+                        $res4 = mysqli_query($con,$reqt4);
+                        if(!$res4){
+                          echo"error rqt4";
+                        }else{
+                          $reqt5 = "select typee from user where id = '$idu'";
+                          $res5 = mysqli_query($con,$reqt5);
+                          if(!$res){
+                              echo"error rqt5";
+                           }else{
+                            $ligne5=mysqli_fetch_array($res5);
+                            if($ligne5[0]=='lecteur'){
+
+                              $reqt7 = "select score from user where id = '$idu'";
+                              $res7 = mysqli_query($con,$reqt7);
+                              if(!$res7){
+                                  echo"error rqt7";
+                               }else{
+                                $ligne7=mysqli_fetch_array($res7);
+                                $de = $ligne7[0]+$pt;
+
+                              $reqt6 = "UPDATE user set score='$de' where id=$idu";
+                              $res6 = mysqli_query($con,$reqt6);
+                              if(!$res6){
+                                echo"error rqt6";
+                             }
+                             else{
+                              echo "
+                              <script>   alert('la demmande est bien enregistre');</script>";
+                             }
+
+                               } 
+
+
+
+                            }else{
+                              echo "
+                              <script>   alert('la demmande est bien enregistre');</script>";
+                            }
+
+                           }
+
+                       }
+                   }
+            
+            
+                   }
+                   else{
+                    echo "
+                    <script>   alert('error rqt2');</script>";
+                   }
+
+
+            }else{
+                echo "
+                <script>   alert('nbr de point --');</script>";
+
+            }
+         }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

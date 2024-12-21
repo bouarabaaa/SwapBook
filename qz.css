@@ -1,0 +1,20 @@
+
+.swiper {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+  }
+  
+  .swiper-slide{
+    background: #6332f6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    transition: .5s linear;
+  }
+  
+  :root{
+    --swiper-theme-color: #6332f6;
+  }

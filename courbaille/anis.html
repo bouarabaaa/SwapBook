@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>project java script</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="practice on javascript part2">
+  <!--t9der tktb hna javascript t3k dir haka w tbda tkteb   <script>         </script> -->
+
+<link rel="stylesheet" href="anis.css">
+</head>
+
+<body>
+<div class="overly">
+  <nav class="navbar">
+    <img class="logo" src="logo.png">
+    <ul>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </nav>
+    <div class="anis">
+<form >
+    <h1>sing in </h1>
+    <input class="inp" type="text" placeholder="username">
+    <input class="inp" type="password" placeholder="Password">
+    <input class="inp" type="submit" value="signe in">
+</form>
+<p id="error">Nom d'utilisateur ou mot de passe Incorrect!!</p>
+</div>
+
+</div>
+
+
+<?php 
+include "connexion.php";
+
+session_start();
+
+if(isset($_POST['ok'])){
+    $username=$_POST["login"];
+    $password=$_POST["password"];
+    
+    $r="SELECT * FROM user WHERE user_name='$username' AND pass='$password' ";
+    $reponse= $con->query($r);
+    $iduser = $reponse->fetch_array(MYSQLI_NUM);
+    $_SESSION['user'] = $iduser;
+    if($reponse->num_rows>0){
+   
+    header('location:acces.php');
+    
+    }
+    
+    else{
+     
+    echo "
+    <script>
+    document.getElementById('error').style.display='block';
+    </script>
+    ";
+    }
+    $reponse->free_result();}
+    ?> 
+
+
+<script src="anis.js"></script>
+</body>
+</html>

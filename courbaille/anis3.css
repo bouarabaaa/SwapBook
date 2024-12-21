@@ -1,0 +1,160 @@
+*{
+    margin: 0;padding: 0;
+}
+.overly{
+    width: 100%;height: 100vh;
+    position: relative;
+    background:url("bg1.jpg");background-size: cover;background-repeat: none;background-position:center ;
+
+}
+
+
+
+/*navbar*/
+.navbar{
+	position: fixed;
+	height: 80px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+}
+.navbar .logo{
+	width: 140px;
+	height: auto;
+	padding: 20px 100px;
+}
+.navbar ul{
+	float: right;
+	margin-right: 20px;
+}
+.navbar ul li{
+	list-style: none;
+	margin: 0 8px;
+	display: inline-block;
+	line-height: 80px;
+}
+.navbar ul li a{
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	padding: 6px 13px;
+	text-decoration: none;
+	transition: background 1s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+	background: red;
+	border-radius: 2px;
+}
+
+
+
+/*anis*/
+.forms{
+    height: auto;
+     width: 100%;
+     
+   
+ }
+
+.anis{
+    padding: 10px 30px;
+    width: 60%;
+    float: left;
+    margin-top: 100px;
+
+
+}
+.anis h1{
+    font-size: 50px;
+    margin: 30px 180px;
+    color: white;
+    cursor: pointer;
+    
+}
+.anis h1::after{
+    content: "";height: 3px;display: block;width: 0;
+    background: red;transition: .6s;margin-top: 2.5px;
+
+}
+
+
+.anis h1:hover::after{
+ width: 35%;
+
+}
+.inph{
+    display: inline-block;
+}
+.anis input[type=text],input[type=password],input[type=submit],select{
+    text-align: center;
+    margin: 10px 0;
+    width: 220px;
+    padding: 10px 0;
+    border-radius: 20px;
+    border:2px solid rgb(211, 54, 67);
+    outline: none;
+    background:rgb(247, 231, 231);
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin-left: 30px;
+}
+select{
+    color: rgb(129, 124, 124);
+}
+input[type=submit]{
+    width: 150px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: red;
+    border: 1px solid rgb(159, 170, 184);
+    transition: .7s;
+}
+input[type=submit]:hover{
+    background: none;
+    color: aliceblue;
+    border:2px solid rgb(211, 54, 67);
+    width: 200px;
+}
+
+
+
+.btn{
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+
+#error{
+    color: red;
+    font-size: 20px;
+    margin-top: 20px;
+    display:none;
+    margin-left: 135px;
+}
+
+.claire{
+    clear: both;
+}
+
+.forms .links{
+
+    padding: 10px 30px;
+    float: left;
+    margin-top: 150px;
+    width: 30%;
+
+}
+.forms .links a{
+    line-height: 3.5;
+    color: white;
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+}
+.forms .links i{
+    padding-right: 25px;
+    color: rgb(40, 167, 230);
+}

@@ -1,0 +1,296 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>project java script</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="practice on javascript part2">
+  <!--t9der tktb hna javascript t3k dir haka w tbda tkteb   <script>         </script> -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+
+
+<?php
+include "connexion.php";
+
+if($_SERVER['HTTP_REFERER'] == 'http://localhost/hhh/anis.php'){
+
+    session_start();
+    
+
+    $iduser = $_SESSION["user"][0];
+
+    $reqt = "select * from avoir where id='$iduser'";
+
+
+
+
+/*$reqt = "select max(id) from projet";*/
+$res = mysqli_query($con,$reqt);
+if(!$res){
+  echo"error";
+ }
+ else{
+    $ligne=mysqli_fetch_array($res);
+    $_SESSION["livre"]=$ligne;
+    if($res->num_rows>0){
+          $reqt2 = "select * from livre where idlivre='$ligne[1]'";
+          $res2 = mysqli_query($con,$reqt2);
+          if(!$res2){
+            echo"error";
+          }
+    }
+
+ }
+
+   /* echo 'hello '.$_SESSION['user'][1].' welcom to our room';
+    foreach($_SESSION['user'] as $ligne) 
+    {
+          echo "<br> $ligne <br>"; 
+    }
+
+
+
+}
+else
+{
+    echo '<script>
+    alert("cette page non disponible")
+    </script>';
+}*/
+
+}
+
+?>
+
+
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-primary" href="#">Anis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ajoutlivre2.php">ajouter livre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Css</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">JavaScript</a>
+              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                tracks
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">php</a>
+                <a class="dropdown-item" href="#">nodjc</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">laravel</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+<!--card-->
+<div class="container">
+<!--jai fait ca pour separer les deux container -->
+    <div class="text-center m-5">
+        <h1>projects</h1>
+        <p>you find all our prjects her</p>
+    </div>
+
+
+  <div class="row">
+
+        <!--jai fait lg md sm pour respecter respence-->
+
+        <?php 
+        if($res->num_rows>0){
+                while($ligne2=mysqli_fetch_array($res2)) 
+
+                {
+                  echo '
+
+        <div class="col-lg-4 col-md-6 col-sm-12 p-1">
+
+
+            <div class="card h-100" >
+                <img class="card-img-top h-50" src="'.$ligne2[0].'" alt="Card image cap">
+                <div class="card-body">
+                  <h3 class="card-title">'.$ligne2[1].'</h3>
+                  <p class="card-text">type : '.$ligne2[3].'</p>
+                  <p class="card-text">date : '.$ligne2[2].'</p>
+                  <a href="affprjt.php?idf='.$ligne2[0].'" class="btn btn-primary mb-0">Go somewhere</a>
+                </div>
+              </div>
+
+        </div> ';
+       }
+
+        }
+
+
+
+                ?>
+
+  </div>
+
+</div>
+
+
+<script src="js/popper.min.js"></script>
+   <script src="js/jquery-3.6.3.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+supp.php   
+
+
+   <?php
+
+
+if(isset($_POST['ok'])){
+  $rf =$_POST["rf"];
+  $titre =$_POST["titre"];
+  $date =$_POST["date"];
+  $categorie =$_POST["categorie"];
+  $nbrexp =$_POST["nbrexp"];
+    
+        $req = "INSERT INTO livre2 (idlivree,iduser,titre,datedition,categorie,nbrexemplaire) VALUES ('$rf','$iduser','$titre','$date','$categorie','$nbrexp')";
+    
+       if(mysqli_query($con, $req)){
+
+        echo "
+        <script>   alert('votre livre est bien enregistre');</script>";
+
+
+       }
+       else{
+        echo "
+        <script>   alert('error');</script>";
+       }
+       
+   
+
+
+      }
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+demlivre.php     nbrex
+
+
+
+
+
+
+                      if($nbex>1){
+                                  $nbxrr = $nbex-1;
+                                  $reqt4 = "UPDATE livre2 set nbrexemplaire='$nbxrr' where idlivree=$idl and iduser=$idu";
+                      }else{
+
+
+
+
+
+                        $reqlr = "select * from livre2 where  idlivree=$idl and iduser !=$idu and nbrexemplaire >0";
+                        $resqlr = mysqli_query($con,$reqlr);
+                        if(!$resqlr){
+                          echo "
+                          <script>   alert('error4444');
+                          
+                          </script>";
+                          
+                        }
+                        else{
+                        if($resqlr->num_rows==0){
+                        $reqt4 = "delete from livre where ref ='$idl'";
+
+                                    
+
+                        }else{
+                          $reqt4 = "delete from livre2 where idlivree=$idl and iduser=$idu";
+                        }
+                  
+
+                        
+                        }
+
+
+
+
+
+                      }

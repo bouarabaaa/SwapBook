@@ -1,0 +1,550 @@
+
+
+/* ------------ VARIABLES ------------ */
+:root{
+  /* FONT */
+  --font: 'Poppins', sans-serif;
+
+  /* COLORS */
+  --color: rgb(65, 130, 216);
+  --bg-color: #f4f4f4;
+}
+
+
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 7px;
+  background: linear-gradient(transparent,#00bcd4,#3d66ec);
+  
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(transparent,#d58ce4,#9819ff);
+
+
+
+}
+body{
+  overflow-x: hidden;
+}
+
+.homme {
+    
+    height: 100vh;
+    background: url('ressources/2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.container-first {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+}
+
+
+
+.des {
+    text-transform: uppercase;
+    font-size: 100px;
+    color: #f1f1f1;
+    font-family: Abril fatface, sans-serif;
+
+
+}
+
+
+.titre{
+    font-family: Arial, Helvetica, sans-serif;
+    
+    font-size: 50px;
+    color: transparent;
+    -webkit-text-stroke: 1px #03a9f4;
+    background: url(ressources/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+
+}
+
+@keyframes back{
+    100%{
+        background-position: 100%;
+    }
+}
+
+
+.desc{
+
+    font-size: 20px;
+    color: #f1f1f0;
+
+    line-height: 40px;
+    font-weight: 300;
+
+}
+
+
+.des span {
+    position: relative;
+}
+.container-btns {
+    position: relative;
+    top: 50px;
+}
+.btn-first {
+    border: 2px solid #07618b;
+    outline: none;
+    background: transparent;
+    font-size: 30px;
+    padding: 18px;
+    width: 270px;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: .7s;
+    
+}
+.btn-first:nth-child(1){
+    margin-right: 30px;
+}
+.btn-first:hover {
+    transition: all 0.6s ease-in-out;
+    background: #f1f1f1;
+    color: #07618b;
+}
+
+.lignes {
+    position: absolute;
+    top: 6%;
+    left: 5%;
+}
+
+
+.logo {
+    position: absolute;
+    right: 2.9%;
+    top: 4%;
+    width: 150px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.medias {
+    list-style-type: none;
+    position: absolute;
+    right: 3.3%;
+    top: 62%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bulle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #07618b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    background: #f1f1f1;
+    cursor: pointer;
+    position: relative;
+}
+
+.logo-medias {
+    width: 40px;
+    height: 40px;
+}
+
+.bulle:hover{
+
+    width: 80px;
+    height: 80px;
+
+
+}
+.logo-medias:hover{
+
+    width: 60px;
+    height: 60px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* @media para hacer el texto responsivo */
+
+@media screen and (max-width: 800px){
+	p{
+		font-size: 12px;
+	}
+}
+
+
+.number{
+    background-image: url(about4.webp);
+    height: 330px;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;/*hada bach tmchi la photo ta3k kithabet wla tala3*/
+}
+
+
+.overly{
+    position: absolute;
+    top: 0;left: 0;width: 100%;height: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    
+
+}
+.info{
+    padding: 100px 0;
+}
+
+.info i{
+
+    color:rgb(65, 130, 216);
+    margin-bottom: 15px;
+}
+
+.info h2{
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+
+}
+.info p{
+    color: white;
+}
+
+
+
+/*pricing*/
+
+
+
+.pricing-itms{
+  float: left;
+  text-align: center;
+  width: 30%;
+  border: 1px solid #e8e8e8;
+  padding: 40px 15px;
+  position: relative;
+ 
+}
+.pricing-itms.mg{
+  margin: 0 5%;
+}
+.pricing-text{
+  text-transform:uppercase;
+  font-size: 17px;
+  color: #999;
+  transition: color .5s;
+}
+.pricing-por{
+  width: 130px;height: 130px;
+  margin: 20px auto;/*ida habit t centri 3afsa fiha width lazm margin ida mafihach dir textalign:center*/
+  padding: 25px 0;
+  border: 2px solid rgb(65, 130, 216);;
+  border-radius: 50%;
+  transition: color .5s;
+}
+.pricing-por .dollar{
+  font-size: 45px;
+}
+.pricing-por .months{
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+}
+.pricing-list{
+  list-style: none;
+}
+.pricing-list li{
+  color: #999;
+  line-height: 1.8;
+}
+.pricing-btn{
+  background: none;
+  border: none;
+  display: block;/*bach ydilek star complet*/
+  width: 140px;
+  padding: 10px;
+  margin:15px auto 0 auto;/*dymn 3fsa kitko 3ndha width bach t centriha lazm margine auto*/
+  color: rgb(65, 130, 216);;
+  border: 2px solid rgb(65, 130, 216);;
+  cursor: pointer;
+}
+.pricing-itms::after{
+  content: "";
+  position: absolute;top: 0;left: 0;
+  width:100%;height:0;
+  background-color: rgb(24, 22, 22);
+  z-index: -1;/*hadi bach ykon lktiba fo9 background*/
+  transition:height 1s;
+}
+.pricing-itms:hover::after{
+ height: 100%;
+}
+.pricing-itms:hover .pricing-por{
+color: white;
+}
+.pricing-itms:hover .pricing-text{
+  color:rgb(65, 130, 216); 
+}
+
+
+
+@media screen and (max-width:570px) {
+
+  .pricing-itms{
+    float: none;
+    text-align: center;
+    width: 95%;
+    border: 1px solid #e8e8e8;
+    padding: 40px 15px;
+    position: relative;
+   
+  }
+
+}
+/*end pricing*/
+
+
+
+
+
+
+
+
+/* ----------- SLIDER ------------ */
+
+.swiper{
+    width: 100%;
+  }
+  
+  .swiper-wrapper{
+    width: 100%;
+    height: 35em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card{
+    width: 20em;
+    height: 95%;
+    background-color: #fff;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgba(10, 25, 189, 0.3);
+    padding: 2em 1em;
+  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+    margin: 0 2em;
+  }
+  
+  .swiper-slide:not(.swiper-slide-active){
+    filter: blur(1px);
+  }
+
+  
+  .card__image{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 5px solid var(--color);
+    padding: 3px;
+    margin-bottom: 1em;
+  }
+  
+  .card__image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .card__content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .card__title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    top: .2em;
+  }
+  
+  .card__name{
+    color: var(--color);
+  }
+  
+  .card__text{
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 1em 0;
+  }
+  
+  .card__btn{
+    background-color: var(--color);
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    padding: .5em;
+    border-radius: .5em;
+    margin-top: .5em;
+    cursor: pointer;
+    transition: padding .5s;
+    transition: background .5s;
+  }
+
+  .card__btn:hover{
+    background: rgb(125, 125, 141);
+    padding: 10px;
+  }
+
+  
+
+  .wavsection{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #07618b;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .wavsection .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(wave.png);
+    background-size: 1000px 100px;
+  }
+
+  .wavsection .wave.wave1{
+    animation: animm 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+  }
+  .wavsection .wave.wave2{
+    animation: animm2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+  }
+
+  .wavsection .wave.wave3{
+    animation: animm 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+  }
+
+  .wavsection .wave.wave4{
+    animation: animm2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+  }
+  @keyframes animm{
+
+    0%{
+        background-position-x: 0;
+    }
+
+   100%{
+        background-position-x: 1000px;
+    }
+
+  }
+
+  @keyframes animm2{
+
+    0%{
+        background-position-x: 0;
+    }
+
+   100%{
+        background-position-x: -1000px;
+    }
+
+  }
+
+
+
+  
+.footer-liste{
+    list-style: none;
+    margin: 20px 0;
+}
+.footer-liste li{
+    display: inline-block;
+    
+}
+.footer-liste li a{
+    display: block;
+    width: 50px;height: 50px;
+    background:white;
+    color: rgb(65, 130, 216);
+    margin: 0 5px;
+    transition: opacity .5s;
+    border-radius: 50%;
+}
+.footer-liste li a i{
+    line-height: 50px;
+}
+.footer-liste li a:hover{
+    opacity: .7;
+}
+.footer-text{
+    color: #999;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.logo1 {
+    margin-top: 40px;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+}
